@@ -1,38 +1,127 @@
+/* Background for the entire app */
+body {
+  background-color: #f0f4f8;  /* Light grey-blue background */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .App {
   text-align: center;
+  margin: 40px;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the main heading */
+h1 {
+  font-size: 2.5rem;
+  color: #4caf50;  /* Soft green for heading */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styling for the filter input section */
+.filter-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Styling for filter inputs */
+.filter-container input {
+  padding: 12px 15px;
+  width: 250px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Input focus effect */
+.filter-container input:focus {
+  border-color: #4caf50;
+  outline: none;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);  /* Green glow effect */
+}
+
+/* Hover effect on inputs */
+.filter-container input:hover {
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);  /* Subtle green border on hover */
+}
+
+/* Container for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Header row styling */
+th {
+  background-color: #4caf50;
   color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 1.1rem;
 }
 
-.App-link {
-  color: #61dafb;
+/* Data row styling */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 0.95rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Zebra striping for rows */
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9f7f9;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #d1e7dd;  /* Light green on hover */
+  cursor: pointer;
+}
+
+/* Responsive table: Scroll for smaller screens */
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
-  to {
-    transform: rotate(360deg);
+
+  th, td {
+    padding: 10px;
   }
+}
+
+/* Custom styles for loading and error messages */
+.loading {
+  font-size: 1.2rem;
+  color: #4caf50;
+}
+
+.error {
+  color: red;
+  font-size: 1.1rem;
 }
